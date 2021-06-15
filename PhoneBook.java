@@ -10,10 +10,10 @@ public class PhoneBook extends Phone {
 
     @Override
     void insertPhone(String name, String phone) {
-        boolean timThay = false;
+        boolean tim = false;
         for (String s : PhoneList) {
             if (s.contains(name)) {
-                timThay = true;
+                tim = true;
                 if (!s.contains(phone)) {
                     s += " : " + phone;
                 } else {
@@ -21,23 +21,23 @@ public class PhoneBook extends Phone {
                 }
             }
         }
-        if (!timThay) {
+        if (!tim) {
             PhoneList.add(name + "," + phone);
         }
     }
 
     @Override
     void removePhone(String name) {
-        boolean searched = false;
+        boolean tim = false;
         for (String s : PhoneList) {
             if (name.equals(s.substring(0, s.indexOf(",")))) {
-                searched = true;
+                tim = true;
                 PhoneList.remove(s);
                 System.out.println("Đã xóa");
                 break;
             }
         }
-        if (!searched) System.out.println("Không thấy: " + name);
+        if (!tim) System.out.println("Không thấy: " + name);
     }
 
     @Override
